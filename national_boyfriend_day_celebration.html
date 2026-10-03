@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Boyfriend Day Celebration 💖</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Playfair Display & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- FontAwesome for romantic icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fffafb;
+            color: #4a3b42;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .rose-gradient {
+            background: linear-gradient(135deg, #9b2c4e 0%, #d53f8c 100%);
+        }
+        .gold-accent {
+            color: #d4af37;
+        }
+        .gold-bg {
+            background-color: #d4af37;
+        }
+        /* Floating hearts animation */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+        .floating-heart {
+            position: fixed;
+            color: rgba(213, 63, 140, 0.4);
+            animation: floatUp 6s linear infinite;
+            z-index: 0;
+            user-select: none;
+            pointer-events: none;
+        }
+        /* Glassmorphism card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(245, 208, 218, 0.5);
+        }
+        /* Coupon flip effect */
+        .coupon-card {
+            perspective: 1000px;
+        }
+        .coupon-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .coupon-card.flipped .coupon-inner {
+            transform: rotateY(180deg);
+        }
+        .coupon-front, .coupon-back {
+            backface-visibility: hidden;
+        }
+        .coupon-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="relative min-h-screen selection:bg-pink-200 selection:text-pink-900">
+
+    <div id="hearts-container"></div>
+
+    <header class="relative z-10 text-center py-20 px-6 max-w-4xl mx-auto">
+        <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-pink-100 text-pink-700 text-sm font-semibold tracking-wider uppercase border border-pink-200 shadow-sm animate-pulse">
+            <i class="fa-solid fa-crown gold-accent mr-1"></i> National Boyfriend Day <i class="fa-solid fa-heart text-pink-500 ml-1"></i>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+            To My Favorite Person, <br><span class="italic font-normal text-rose-700">My Entire World</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+            Every single day feels brighter, warmer, and infinitely more magical with you by my side. Today is all about celebrating <span class="font-medium text-pink-700">you</span>.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#countdown" class="px-8 py-3 rounded-full rose-gradient text-white font-medium shadow-lg hover:shadow-pink-300/50 hover:scale-105 transition duration-300">
+                Start Celebration <i class="fa-solid fa-arrow-down ml-2"></i>
+            </a>
+            <a href="#letter" class="px-8 py-3 rounded-full bg-white text-rose-700 font-medium border border-rose-200 shadow-sm hover:bg-rose-50 hover:scale-105 transition duration-300">
+                Read My Letter <i class="fa-solid fa-envelope-open-text ml-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <section id="countdown" class="relative z-10 py-16 px-6 max-w-5xl mx-auto">
+        <div class="glass-card rounded-3xl p-8 md:p-12 shadow-xl text-center relative overflow-hidden border-2 border-pink-100">
+            <div class="absolute -right-10 -top-10 text-pink-100 opacity-50 text-9xl pointer-events-none font-serif">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Counting Every Moment Together</h2>
+            <p class="text-gray-500 mb-8 max-w-lg mx-auto">Since the exact moment my life changed for the absolute best:</p>
+            
+            <div id="timer-display" class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
+                <div class="bg-white/80 rounded-2xl p-6 shadow-sm border border-pink-100">
+                    <span id="days" class="text-4xl md:text-5xl font-bold text-rose-700 block font-serif">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500 mt-1 block font-semibold">Days</span>
+                </div>
+                <div class="bg-white/80 rounded-2xl p-6 shadow-sm border border-pink-100">
+                    <span id="hours" class="text-4xl md:text-5xl font-bold text-rose-700 block font-serif">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500 mt-1 block font-semibold">Hours</span>
+                </div>
+                <div class="bg-white/80 rounded-2xl p-6 shadow-sm border border-pink-100">
+                    <span id="minutes" class="text-4xl md:text-5xl font-bold text-rose-700 block font-serif">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500 mt-1 block font-semibold">Minutes</span>
+                </div>
+                <div class="bg-white/80 rounded-2xl p-6 shadow-sm border border-pink-100">
+                    <span id="seconds" class="text-4xl md:text-5xl font-bold text-rose-700 block font-serif animate-pulse">00</span>
+                    <span class="text-xs uppercase tracking-widest text-gray-500 mt-1 block font-semibold">Seconds</span>
+                </div>
+            </div>
+
+            <!-- Date setter toggle option -->
+            <div class="text-sm text-gray-500 flex items-center justify-center gap-2">
+                <span>Our special anniversary date:</span>
+                <input type="date" id="anniversary-date" value="2023-10-04" class="px-3 py-1 rounded-lg border border-pink-200 text-rose-700 bg-white/50 focus:outline-none focus:ring-2 focus:ring-pink-400 font-medium">
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10 py-16 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-rose-600 text-sm font-semibold uppercase tracking-widest block mb-2">Redeemable Anytime</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900">The Boyfriend Love Coupon Book</h2>
+            <p class="text-gray-600 mt-2">Click any coupon card below to flip and redeem your special reward!</p>
+        </div>
+
+        <div id="coupons-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Coupons will be dynamically populated or hardcoded -->
+        </div>
+    </section>
+
+    <section class="relative z-10 py-16 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="text-rose-600 text-sm font-semibold uppercase tracking-widest block mb-2">Our Love Story</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900">Milestones & Sweet Memories</h2>
+            <p class="text-gray-600 mt-2">The chapters of us that I cherish more than words can say.</p>
+        </div>
+
+        <div class="relative border-l-2 border-pink-200 ml-4 md:ml-32 space-y-12">
+            <!-- Timeline Item 1 -->
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-rose-600 border-4 border-white shadow-md group-hover:scale-125 transition"></div>
+                <div class="glass-card rounded-2xl p-6 shadow-sm border border-pink-100 hover:shadow-md transition">
+                    <span class="text-xs font-bold text-rose-600 uppercase tracking-widest bg-pink-50 px-3 py-1 rounded-full border border-pink-100">Chapter One</span>
+                    <h3 class="text-2xl font-bold text-gray-800 mt-2">The Day We First Met</h3>
+                    <p class="text-gray-600 mt-2 leading-relaxed">Everything changed the moment our paths crossed. I didn't know then that you'd become my absolute favorite person in the entire world.</p>
+                    <div class="mt-4 overflow-hidden rounded-xl h-48 bg-pink-50 flex items-center justify-center text-pink-300">
+                        <img src="https://placehold.co/600x300/fdf2f4/db2777?text=Our+First+Meeting" alt="First Meeting" class="w-full h-full object-cover rounded-xl hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x300/fdf2f4/db2777?text=Our+Memory'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-rose-600 border-4 border-white shadow-md group-hover:scale-125 transition"></div>
+                <div class="glass-card rounded-2xl p-6 shadow-sm border border-pink-100 hover:shadow-md transition">
+                    <span class="text-xs font-bold text-rose-600 uppercase tracking-widest bg-pink-50 px-3 py-1 rounded-full border border-pink-100">The Spark</span>
+                    <h3 class="text-2xl font-bold text-gray-800 mt-2">Our First Official Date</h3>
+                    <p class="text-gray-600 mt-2 leading-relaxed">Nervous butterflies, endless laughter, and realizing how effortlessly we clicked. I knew right then there was no turning back.</p>
+                    <div class="mt-4 overflow-hidden rounded-xl h-48 bg-pink-50 flex items-center justify-center text-pink-300">
+                        <img src="https://placehold.co/600x300/fdf2f4/db2777?text=First+Official+Date" alt="First Date" class="w-full h-full object-cover rounded-xl hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x300/fdf2f4/db2777?text=Our+Memory'">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Item 3 -->
+            <div class="relative pl-8 md:pl-12 group">
+                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-rose-600 border-4 border-white shadow-md group-hover:scale-125 transition"></div>
+                <div class="glass-card rounded-2xl p-6 shadow-sm border border-pink-100 hover:shadow-md transition">
+                    <span class="text-xs font-bold text-rose-600 uppercase tracking-widest bg-pink-50 px-3 py-1 rounded-full border border-pink-100">Today & Always</span>
+                    <h3 class="text-2xl font-bold text-gray-800 mt-2">Building Our Future Together</h3>
+                    <p class="text-gray-600 mt-2 leading-relaxed">From cozy movie nights to crazy adventures, every single day with you is a gift. Here's to celebrating you today and for all our tomorrows.</p>
+                    <div class="mt-4 overflow-hidden rounded-xl h-48 bg-pink-50 flex items-center justify-center text-pink-300">
+                        <img src="https://placehold.co/600x300/fdf2f4/db2777?text=Adventures+Together" alt="Future" class="w-full h-full object-cover rounded-xl hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x300/fdf2f4/db2777?text=Our+Memory'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10 py-16 px-6 max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-rose-600 text-sm font-semibold uppercase tracking-widest block mb-2">Endless Reasons</span>
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-900">Why I Love You So Much</h2>
+            <p class="text-gray-600 mt-2">Click on any card to reveal a special reason straight from my heart.</p>
+        </div>
+
+        <div id="reasons-container" class="space-y-4">
+            <!-- Reasons will be injected via JS -->
+        </div>
+    </section>
+
+    <section id="letter" class="relative z-10 py-16 px-6 max-w-3xl mx-auto">
+        <div class="glass-card rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-pink-200 relative">
+            <div class="absolute top-4 right-6 text-rose-400 text-2xl">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3 class="text-3xl font-bold font-serif text-gray-900 mb-6 text-center">A Special Note For You</h3>
+            
+            <div class="space-y-4 text-gray-700 leading-relaxed font-light text-lg">
+                <p class="font-serif italic text-rose-800 text-xl">Dearest Boyfriend,</p>
+                <p>
+                    If I could give you one thing in life, I would give you the ability to see yourself through my eyes. Only then would you truly realize how incredibly special, handsome, kind, and deeply loved you are.
+                </p>
+                <p>
+                    Thank you for being my safe space, my partner in crime, and my greatest cheerleader. Your smile brightens my darkest days, and your arms feel like home no matter where we are. 
+                </p>
+                <p>
+                    Happy National Boyfriend Day! I am so endlessly grateful that out of all the people in this big world, you are mine and I am yours.
+                </p>
+                <p class="text-right font-serif font-bold text-rose-800 pt-4">
+                    Forever & Always Yours,<br>
+                    <span class="text-gray-900 text-base font-sans font-medium">Your Loving Partner ❤️</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="relative z-10 py-12 text-center text-gray-500 text-sm border-t border-pink-100 mt-20">
+        <p class="flex items-center justify-center gap-1">
+            Made with <i class="fa-solid fa-heart text-rose-600 animate-pulse"></i> especially for National Boyfriend Day
+        </p>
+        <p class="mt-2 text-xs text-gray-400">You are cherished beyond measure.</p>
+    </footer>
+
+    <script>
+        // Floating Hearts Generator
+        function createFloatingHearts() {
+            const container = document.getElementById('hearts-container');
+            const icons = ['fa-heart', 'fa-sparkles', 'fa-star'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'floating-heart';
+                heart.innerHTML = `<i class="fa-solid ${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    heart.remove();
+                }, 6000);
+            }, 400);
+        }
+
+        // Countdown Timer Logic
+        function updateCountdown() {
+            const dateInput = document.getElementById('anniversary-date').value;
+            const targetDate = new Date(dateInput).getTime();
+            const now = new Date().getTime();
+            const difference = now - targetDate;
+
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = String(days).padStart(2, '0');
+                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+            }
+        }
+
+        // Coupons Data & Renderer
+        const couponsData = [
+            { title: "One Free Massage", desc: "Redeemable for a 30-minute relaxing back & shoulder massage.", icon: "fa-hands-bubbles" },
+            { title: "Movie Night Pick", desc: "You get total control over the movie, snacks, and seating choice!", icon: "fa-film" },
+            { title: "Home-Cooked Favorite Meal", desc: "Whatever you're craving, I'll cook it just for you.", icon: "fa-utensils" },
+            { title: "Endless Cuddles & Hugs", desc: "Valid for unlimited uninterrupted cuddles whenever you need them.", icon: "fa-heart-pulse" },
+            { title: "Coffee & Breakfast in Bed", desc: "Start your morning like a true king with your favorite breakfast.", icon: "fa-mug-hot" },
+            { title: "A Surprise Date Night", desc: "Sit back and relax while I plan a complete surprise outing for us.", icon: "fa-gift" }
+        ];
+
+        function renderCoupons() {
+            const grid = document.getElementById('coupons-grid');
+            grid.innerHTML = couponsData.map((c, index) => `
+                <div class="coupon-card h-56 cursor-pointer" onclick="this.classList.toggle('flipped')">
+                    <div class="coupon-inner relative w-full h-full rounded-2xl shadow-md transition-transform duration-500">
+                        <!-- Front -->
+                        <div class="coupon-front absolute inset-0 bg-white rounded-2xl p-6 flex flex-col items-center justify-center text-center border-2 border-dashed border-pink-300 shadow-sm">
+                            <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center text-rose-600 mb-3 text-xl">
+                                <i class="fa-solid ${c.icon}"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800 font-serif">${c.title}</h3>
+                            <span class="text-xs text-rose-500 mt-2 uppercase tracking-widest font-semibold">Click to Flip & Redeem</span>
+                        </div>
+                        <!-- Back -->
+                        <div class="coupon-back absolute inset-0 rose-gradient text-white rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-lg">
+                            <span class="text-xs uppercase tracking-widest text-pink-200 font-semibold mb-2">Coupon #${index + 1}</span>
+                            <p class="text-lg font-medium mb-3">${c.desc}</p>
+                            <span class="text-xs bg-white/20 px-3 py-1 rounded-full text-white font-medium">Redeemed with Love ❤️</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Reasons Why I Love You Data & Renderer
+        const reasonsData = [
+            "Your smile instantly makes my worst days completely disappear.",
+            "You listen to me with genuine care and make me feel truly understood.",
+            "You make me laugh harder than anyone else in the entire world.",
+            "Your kindness and gentle heart inspire me to be a better person.",
+            "Even doing absolutely nothing together feels like the best adventure.",
+            "You support my dreams and believe in me even when I doubt myself."
+        ];
+
+        function renderReasons() {
+            const container = document.getElementById('reasons-container');
+            container.innerHTML = reasonsData.map((reason, index) => `
+                <div class="glass-card rounded-2xl p-5 shadow-sm border border-pink-100 cursor-pointer transition hover:border-pink-300 group" onclick="toggleReason(this)">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <span class="w-8 h-8 rounded-full bg-pink-100 text-rose-700 flex items-center justify-center font-bold text-sm font-serif">0${index + 1}</span>
+                            <h4 class="text-gray-800 font-medium group-hover:text-rose-700 transition">Reason #${index + 1}</h4>
+                        </div>
+                        <i class="fa-solid fa-chevron-down text-rose-400 transition-transform duration-300 arrow-icon"></i>
+                    </div>
+                    <div class="reason-content hidden mt-4 pt-3 border-t border-pink-100 text-gray-600 font-light leading-relaxed">
+                        ${reason}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleReason(element) {
+            const content = element.querySelector('.reason-content');
+            const arrow = element.querySelector('.arrow-icon');
+            content.classList.toggle('hidden');
+            arrow.classList.toggle('rotate-180');
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            createFloatingHearts();
+            renderCoupons();
+            renderReasons();
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+            
+            document.getElementById('anniversary-date').addEventListener('change', updateCountdown);
+        };
+    </script>
+</body>
+</html>
