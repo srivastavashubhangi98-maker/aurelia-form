@@ -1,366 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>National Boyfriend Day Celebration 💖</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Playfair Display & Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- FontAwesome for romantic icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #fffafb;
-            color: #4a3b42;
-            overflow-x: hidden;
-        }
-        h1, h2, h3, .font-serif {
-            font-family: 'Playfair Display', serif;
-        }
-        .rose-gradient {
-            background: linear-gradient(135deg, #9b2c4e 0%, #d53f8c 100%);
-        }
-        .gold-accent {
-            color: #d4af37;
-        }
-        .gold-bg {
-            background-color: #d4af37;
-        }
-        /* Floating hearts animation */
-        @keyframes floatUp {
-            0% {
-                transform: translateY(100vh) scale(0.5);
-                opacity: 0;
-            }
-            50% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1.2);
-                opacity: 0;
-            }
-        }
-        .floating-heart {
-            position: fixed;
-            color: rgba(213, 63, 140, 0.4);
-            animation: floatUp 6s linear infinite;
-            z-index: 0;
-            user-select: none;
-            pointer-events: none;
-        }
-        /* Glassmorphism card */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(245, 208, 218, 0.5);
-        }
-        /* Coupon flip effect */
-        .coupon-card {
-            perspective: 1000px;
-        }
-        .coupon-inner {
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        .coupon-card.flipped .coupon-inner {
-            transform: rotateY(180deg);
-        }
-        .coupon-front, .coupon-back {
-            backface-visibility: hidden;
-        }
-        .coupon-back {
-            transform: rotateY(180deg);
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff7f8">
+  <meta name="description" content="A little celebration, made just for you. Open each surprise one at a time.">
+  <title>A Little Celebration for You 💗</title>
+  <style>
+    :root{--ink:#462c37;--muted:#876f79;--rose:#a83359;--pink:#e779a2;--pale:#fff1f5;--gold:#b18a42;--line:#f1dce3;--paper:rgba(255,255,255,.82);--shadow:0 22px 65px rgba(116,47,73,.11)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 12% 0%,#ffe7ee 0,transparent 34rem),radial-gradient(ellipse at 100% 45%,#fff0e6 0,transparent 28rem),#fffafb;color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}h1,h2,h3,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:500;line-height:1.16}h1{font-size:clamp(3rem,8vw,6.5rem);letter-spacing:-.055em;margin:18px 0}h2{font-size:clamp(2.1rem,5vw,3.6rem);letter-spacing:-.035em;margin:8px 0 12px}h3{font-size:1.55rem;margin:8px 0}p{margin:0 0 14px}.shell{width:min(1060px,calc(100% - 36px));margin:auto}.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:70px 0;position:relative;isolation:isolate}.hero:before,.hero:after{content:"";position:absolute;z-index:-1;border:1px solid rgba(209,120,151,.18);border-radius:50%;width:min(72vw,700px);aspect-ratio:1}.hero:after{width:min(88vw,870px);border-color:rgba(209,120,151,.1)}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:7px 15px;border-radius:99px;background:#fff0f4;color:var(--rose);border:1px solid #f3d5df;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700}.gold{color:var(--gold)}.hero-copy{max-width:730px;margin:0 auto;color:var(--muted);font-size:clamp(1.05rem,2vw,1.25rem);font-weight:300}.hero h1 em{color:var(--rose);font-weight:400}.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}.button{appearance:none;border:0;border-radius:999px;padding:13px 23px;background:linear-gradient(130deg,#9d3153,#d95f91);color:#fff;font-weight:700;font-size:.96rem;text-decoration:none;cursor:pointer;box-shadow:0 10px 25px #b7487033;transition:transform .2s,box-shadow .2s}.button:hover{transform:translateY(-2px);box-shadow:0 14px 32px #b7487042}.button.secondary{background:#fff;color:var(--rose);border:1px solid #eed2dc;box-shadow:none}.button:focus-visible,input:focus-visible,.coupon:focus-visible,.reason:focus-visible{outline:3px solid #e78bad;outline-offset:3px}.hint{font-size:.82rem;color:#a1848e;margin-top:16px}.stage{padding:44px 0 74px;animation:appear .65s both}.stage[hidden]{display:none}.stage-card{position:relative;background:var(--paper);border:1px solid rgba(235,199,211,.8);border-radius:30px;padding:clamp(25px,6vw,58px);box-shadow:var(--shadow);backdrop-filter:blur(12px);overflow:hidden}.stage-card:after{content:"♡";position:absolute;right:24px;top:8px;color:#f8e8ed;font:120px Georgia;line-height:1;pointer-events:none}.section-head{text-align:center;max-width:700px;margin:0 auto 32px;position:relative;z-index:1}.section-head p{color:var(--muted)}.kicker{font-size:.74rem;color:var(--rose);font-weight:750;letter-spacing:.17em;text-transform:uppercase}.timer{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:720px;margin:28px auto}.unit{background:#fff;border:1px solid #f2dfe5;border-radius:19px;padding:20px 10px;text-align:center;box-shadow:0 7px 20px #8d40500a}.unit strong{display:block;color:var(--rose);font:clamp(2rem,6vw,3.5rem) Georgia;line-height:1.1}.unit span{color:var(--muted);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase}.date-row{display:flex;justify-content:center;align-items:center;gap:12px;flex-wrap:wrap;color:var(--muted);font-size:.9rem}.date-row input{font:inherit;color:var(--rose);border:1px solid #efd1dc;border-radius:10px;padding:7px 10px;background:#fff}.surprise-next{text-align:center;margin:28px 0 0;position:relative;z-index:1}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.coupon{height:238px;perspective:900px;cursor:pointer;border:0;background:none;text-align:inherit;color:inherit;padding:0}.coupon-inner{height:100%;position:relative;transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1)}.coupon.flipped .coupon-inner{transform:rotateY(180deg)}.coupon-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:21px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;box-shadow:0 10px 25px #7c3d4a12}.coupon-front{background:#fff;border:1px dashed #dfa6b8}.coupon-back{background:linear-gradient(140deg,#9d3153,#d95f91);color:white;transform:rotateY(180deg)}.coupon-icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--pale);color:var(--rose);font-size:1.35rem;margin-bottom:12px}.coupon-front h3{font-size:1.28rem}.coupon-front small,.coupon-back small{letter-spacing:.12em;text-transform:uppercase;font-size:.68rem;font-weight:700;color:#b04b6b}.coupon-back small{color:#ffe0e9}.coupon-back p{font-size:1rem;margin:10px 0}.timeline{max-width:760px;margin:0 auto;border-left:2px solid #edcbd6;padding-left:28px;display:grid;gap:22px}.memory{position:relative;background:#fff;border:1px solid var(--line);border-radius:19px;padding:23px;box-shadow:0 8px 24px #7c3d4a0b}.memory:before{content:"";position:absolute;width:12px;height:12px;background:var(--rose);border:4px solid #fff;border-radius:50%;left:-38px;top:25px;box-shadow:0 0 0 1px #eccbd6}.chapter{color:var(--rose);font-size:.69rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.memory p{color:var(--muted);margin:9px 0 0}.memory-photo{margin-top:16px;min-height:145px;border-radius:13px;overflow:hidden;background:linear-gradient(135deg,#fff0f4,#fbe1e8);display:grid;place-items:center;color:#bc6681;text-align:center;padding:15px}.memory-photo img{width:100%;height:180px;object-fit:cover;border-radius:13px}.memory-photo input{max-width:220px;font-size:.75rem;margin-top:8px}.reasons{display:grid;gap:10px;max-width:760px;margin:auto}.reason{border:1px solid var(--line);border-radius:16px;background:#fff;padding:16px 19px;cursor:pointer;text-align:left;color:inherit}.reason summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;font-weight:650}.reason summary::-webkit-details-marker{display:none}.reason summary:after{content:"⌄";font-size:1.3rem;color:var(--rose);transition:transform .2s}.reason[open] summary:after{transform:rotate(180deg)}.reason-answer{border-top:1px solid #f4e4e9;margin-top:13px;padding-top:12px;color:var(--muted);font-weight:300}.letter{max-width:720px;margin:auto;background:#fffdfd;border:1px solid #eccdd8;border-radius:24px;padding:clamp(25px,6vw,52px);box-shadow:var(--shadow);position:relative}.letter:after{content:"♥";position:absolute;right:22px;top:14px;color:#e9adc0}.letter p{color:#735966;font-weight:300}.letter .salute,.letter .signoff{font:italic 1.2rem Georgia;color:var(--rose)}.letter .signoff{text-align:right;font-style:normal;font-weight:bold}.footer{text-align:center;padding:25px 0 45px;color:#987e88;font-size:.84rem}.footer b{color:var(--rose)}.float-layer{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:-1}.float{position:absolute;bottom:-40px;color:#dc699044;animation:floatUp linear forwards}@keyframes floatUp{to{transform:translateY(-110vh) rotate(40deg);opacity:0}}@keyframes appear{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}@media(max-width:760px){.grid{grid-template-columns:repeat(2,1fr)}.stage-card{border-radius:23px}.timer{gap:8px}.unit{padding:15px 5px}}@media(max-width:480px){.grid{grid-template-columns:1fr}.coupon{height:205px}.timer{grid-template-columns:repeat(2,1fr)}.date-row{flex-direction:column;gap:5px}.hero-actions{flex-direction:column;align-items:center}.hero-actions .button{width:min(100%,270px)}.timeline{padding-left:23px}.memory:before{left:-33px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+  </style>
 </head>
-<body class="relative min-h-screen selection:bg-pink-200 selection:text-pink-900">
-
-    <div id="hearts-container"></div>
-
-    <header class="relative z-10 text-center py-20 px-6 max-w-4xl mx-auto">
-        <div class="inline-block mb-4 px-4 py-1.5 rounded-full bg-pink-100 text-pink-700 text-sm font-semibold tracking-wider uppercase border border-pink-200 shadow-sm animate-pulse">
-            <i class="fa-solid fa-crown gold-accent mr-1"></i> National Boyfriend Day <i class="fa-solid fa-heart text-pink-500 ml-1"></i>
-        </div>
-        <h1 class="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-            To My Favorite Person, <br><span class="italic font-normal text-rose-700">My Entire World</span>
-        </h1>
-        <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Every single day feels brighter, warmer, and infinitely more magical with you by my side. Today is all about celebrating <span class="font-medium text-pink-700">you</span>.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <a href="#countdown" class="px-8 py-3 rounded-full rose-gradient text-white font-medium shadow-lg hover:shadow-pink-300/50 hover:scale-105 transition duration-300">
-                Start Celebration <i class="fa-solid fa-arrow-down ml-2"></i>
-            </a>
-            <a href="#letter" class="px-8 py-3 rounded-full bg-white text-rose-700 font-medium border border-rose-200 shadow-sm hover:bg-rose-50 hover:scale-105 transition duration-300">
-                Read My Letter <i class="fa-solid fa-envelope-open-text ml-2"></i>
-            </a>
-        </div>
+<body>
+  <div class="float-layer" id="float-layer" aria-hidden="true"></div>
+  <main>
+    <header class="hero shell" id="top">
+      <div>
+        <span class="eyebrow"><span class="gold">✦</span> A little something for you <span>♥</span></span>
+        <h1>To my favorite person,<br><em>my entire world</em></h1>
+        <p class="hero-copy">Every day feels brighter, warmer, and more magical with you by my side. Today is all about celebrating <strong>you</strong>.</p>
+        <div class="hero-actions"><button class="button" data-open="countdown">Open your first surprise <span aria-hidden="true">↓</span></button><a class="button secondary" href="#letter" id="letter-link" hidden>Skip to the letter</a></div>
+        <p class="hint">There’s more waiting below. Open each little surprise when you’re ready.</p>
+      </div>
     </header>
 
-    <section id="countdown" class="relative z-10 py-16 px-6 max-w-5xl mx-auto">
-        <div class="glass-card rounded-3xl p-8 md:p-12 shadow-xl text-center relative overflow-hidden border-2 border-pink-100">
-            <div class="absolute -right-10 -top-10 text-pink-100 opacity-50 text-9xl pointer-events-none font-serif">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">Counting Every Moment Together</h2>
-            <p class="text-gray-500 mb-8 max-w-lg mx-auto">Since the exact moment my life changed for the absolute best:</p>
-            
-            <div id="timer-display" class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto mb-8">
-                <div class="bg-white/80 rounded-2xl p-6 shadow-sm border border-pink-100">
-                    <span id="days" class="text-4xl md:text-5xl font-bold text-rose-700 block font-serif">00</span>
-                    <span class="text-xs uppercase tracking-widest text-gray-500 mt-1 block font-semibold">Days</span>
-                </div>
-                <div class="bg-white/80 rounded-2xl p-6 shadow-sm border border-pink-100">
-                    <span id="hours" class="text-4xl md:text-5xl font-bold text-rose-700 block font-serif">00</span>
-                    <span class="text-xs uppercase tracking-widest text-gray-500 mt-1 block font-semibold">Hours</span>
-                </div>
-                <div class="bg-white/80 rounded-2xl p-6 shadow-sm border border-pink-100">
-                    <span id="minutes" class="text-4xl md:text-5xl font-bold text-rose-700 block font-serif">00</span>
-                    <span class="text-xs uppercase tracking-widest text-gray-500 mt-1 block font-semibold">Minutes</span>
-                </div>
-                <div class="bg-white/80 rounded-2xl p-6 shadow-sm border border-pink-100">
-                    <span id="seconds" class="text-4xl md:text-5xl font-bold text-rose-700 block font-serif animate-pulse">00</span>
-                    <span class="text-xs uppercase tracking-widest text-gray-500 mt-1 block font-semibold">Seconds</span>
-                </div>
-            </div>
-
-            <!-- Date setter toggle option -->
-            <div class="text-sm text-gray-500 flex items-center justify-center gap-2">
-                <span>Our special anniversary date:</span>
-                <input type="date" id="anniversary-date" value="2023-10-04" class="px-3 py-1 rounded-lg border border-pink-200 text-rose-700 bg-white/50 focus:outline-none focus:ring-2 focus:ring-pink-400 font-medium">
-            </div>
-        </div>
+    <section class="stage shell" id="countdown" hidden aria-labelledby="count-title">
+      <div class="stage-card"><div class="section-head"><span class="kicker">Surprise one · every moment</span><h2 id="count-title">Counting every moment together</h2><p>Since the day my life changed for the absolute best.</p></div>
+        <div class="timer" aria-live="polite"><div class="unit"><strong id="days">00</strong><span>Days</span></div><div class="unit"><strong id="hours">00</strong><span>Hours</span></div><div class="unit"><strong id="minutes">00</strong><span>Minutes</span></div><div class="unit"><strong id="seconds">00</strong><span>Seconds</span></div></div>
+        <label class="date-row">Our special anniversary date: <input type="date" id="anniversary-date" value="2023-10-04"></label>
+        <div class="surprise-next"><button class="button" data-open="coupons">Next surprise: your love coupons →</button></div>
+      </div>
     </section>
 
-    <section class="relative z-10 py-16 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-12">
-            <span class="text-rose-600 text-sm font-semibold uppercase tracking-widest block mb-2">Redeemable Anytime</span>
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-900">The Boyfriend Love Coupon Book</h2>
-            <p class="text-gray-600 mt-2">Click any coupon card below to flip and redeem your special reward!</p>
-        </div>
+    <section class="stage shell" id="coupons" hidden aria-labelledby="coupon-title"><div class="stage-card"><div class="section-head"><span class="kicker">Surprise two · redeem anytime</span><h2 id="coupon-title">The boyfriend love coupon book</h2><p>Tap any card to flip it and reveal your little treat.</p></div><div class="grid" id="coupons-grid"></div><div class="surprise-next"><button class="button" data-open="story">Next surprise: our story →</button></div></div></section>
 
-        <div id="coupons-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Coupons will be dynamically populated or hardcoded -->
-        </div>
-    </section>
+    <section class="stage shell" id="story" hidden aria-labelledby="story-title"><div class="stage-card"><div class="section-head"><span class="kicker">Surprise three · our love story</span><h2 id="story-title">Milestones &amp; sweet memories</h2><p>The chapters of us that I cherish more than words can say.</p></div><div class="timeline">
+      <article class="memory"><span class="chapter">Chapter one</span><h3>The day we first met</h3><p>Everything changed the moment our paths crossed. I didn't know then that you'd become my absolute favorite person in the entire world.</p><div class="memory-photo"><div><span>Our first meeting</span><br><label>Add a photo (optional) <input type="file" accept="image/*" data-photo="first"></label></div></div></article>
+      <article class="memory"><span class="chapter">The spark</span><h3>Our first official date</h3><p>Nervous butterflies, endless laughter, and realizing how effortlessly we clicked. I knew right then there was no turning back.</p><div class="memory-photo"><div><span>Our first official date</span><br><label>Add a photo (optional) <input type="file" accept="image/*" data-photo="date"></label></div></div></article>
+      <article class="memory"><span class="chapter">Today &amp; always</span><h3>Building our future together</h3><p>From cozy movie nights to crazy adventures, every single day with you is a gift. Here's to celebrating you today and for all our tomorrows.</p><div class="memory-photo"><div><span>Adventures together</span><br><label>Add a photo (optional) <input type="file" accept="image/*" data-photo="future"></label></div></div></article>
+    </div><div class="surprise-next"><button class="button" data-open="reasons">Next surprise: little reasons why →</button></div></div></section>
 
-    <section class="relative z-10 py-16 px-6 max-w-4xl mx-auto">
-        <div class="text-center mb-16">
-            <span class="text-rose-600 text-sm font-semibold uppercase tracking-widest block mb-2">Our Love Story</span>
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-900">Milestones & Sweet Memories</h2>
-            <p class="text-gray-600 mt-2">The chapters of us that I cherish more than words can say.</p>
-        </div>
+    <section class="stage shell" id="reasons" hidden aria-labelledby="reasons-title"><div class="stage-card"><div class="section-head"><span class="kicker">Surprise four · endless reasons</span><h2 id="reasons-title">Why I love you so much</h2><p>Open each card for a reason straight from my heart.</p></div><div class="reasons" id="reasons-container"></div><div class="surprise-next"><button class="button" data-open="letter">One last surprise: a note for you →</button></div></div></section>
 
-        <div class="relative border-l-2 border-pink-200 ml-4 md:ml-32 space-y-12">
-            <!-- Timeline Item 1 -->
-            <div class="relative pl-8 md:pl-12 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-rose-600 border-4 border-white shadow-md group-hover:scale-125 transition"></div>
-                <div class="glass-card rounded-2xl p-6 shadow-sm border border-pink-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-rose-600 uppercase tracking-widest bg-pink-50 px-3 py-1 rounded-full border border-pink-100">Chapter One</span>
-                    <h3 class="text-2xl font-bold text-gray-800 mt-2">The Day We First Met</h3>
-                    <p class="text-gray-600 mt-2 leading-relaxed">Everything changed the moment our paths crossed. I didn't know then that you'd become my absolute favorite person in the entire world.</p>
-                    <div class="mt-4 overflow-hidden rounded-xl h-48 bg-pink-50 flex items-center justify-center text-pink-300">
-                        <img src="https://placehold.co/600x300/fdf2f4/db2777?text=Our+First+Meeting" alt="First Meeting" class="w-full h-full object-cover rounded-xl hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x300/fdf2f4/db2777?text=Our+Memory'">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Timeline Item 2 -->
-            <div class="relative pl-8 md:pl-12 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-rose-600 border-4 border-white shadow-md group-hover:scale-125 transition"></div>
-                <div class="glass-card rounded-2xl p-6 shadow-sm border border-pink-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-rose-600 uppercase tracking-widest bg-pink-50 px-3 py-1 rounded-full border border-pink-100">The Spark</span>
-                    <h3 class="text-2xl font-bold text-gray-800 mt-2">Our First Official Date</h3>
-                    <p class="text-gray-600 mt-2 leading-relaxed">Nervous butterflies, endless laughter, and realizing how effortlessly we clicked. I knew right then there was no turning back.</p>
-                    <div class="mt-4 overflow-hidden rounded-xl h-48 bg-pink-50 flex items-center justify-center text-pink-300">
-                        <img src="https://placehold.co/600x300/fdf2f4/db2777?text=First+Official+Date" alt="First Date" class="w-full h-full object-cover rounded-xl hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x300/fdf2f4/db2777?text=Our+Memory'">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Timeline Item 3 -->
-            <div class="relative pl-8 md:pl-12 group">
-                <div class="absolute -left-[9px] top-1 w-4 h-4 rounded-full bg-rose-600 border-4 border-white shadow-md group-hover:scale-125 transition"></div>
-                <div class="glass-card rounded-2xl p-6 shadow-sm border border-pink-100 hover:shadow-md transition">
-                    <span class="text-xs font-bold text-rose-600 uppercase tracking-widest bg-pink-50 px-3 py-1 rounded-full border border-pink-100">Today & Always</span>
-                    <h3 class="text-2xl font-bold text-gray-800 mt-2">Building Our Future Together</h3>
-                    <p class="text-gray-600 mt-2 leading-relaxed">From cozy movie nights to crazy adventures, every single day with you is a gift. Here's to celebrating you today and for all our tomorrows.</p>
-                    <div class="mt-4 overflow-hidden rounded-xl h-48 bg-pink-50 flex items-center justify-center text-pink-300">
-                        <img src="https://placehold.co/600x300/fdf2f4/db2777?text=Adventures+Together" alt="Future" class="w-full h-full object-cover rounded-xl hover:scale-105 transition duration-500" onerror="this.src='https://placehold.co/600x300/fdf2f4/db2777?text=Our+Memory'">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="relative z-10 py-16 px-6 max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-            <span class="text-rose-600 text-sm font-semibold uppercase tracking-widest block mb-2">Endless Reasons</span>
-            <h2 class="text-3xl md:text-5xl font-bold text-gray-900">Why I Love You So Much</h2>
-            <p class="text-gray-600 mt-2">Click on any card to reveal a special reason straight from my heart.</p>
-        </div>
-
-        <div id="reasons-container" class="space-y-4">
-            <!-- Reasons will be injected via JS -->
-        </div>
-    </section>
-
-    <section id="letter" class="relative z-10 py-16 px-6 max-w-3xl mx-auto">
-        <div class="glass-card rounded-3xl p-8 md:p-12 shadow-2xl border-2 border-pink-200 relative">
-            <div class="absolute top-4 right-6 text-rose-400 text-2xl">
-                <i class="fa-solid fa-heart"></i>
-            </div>
-            <h3 class="text-3xl font-bold font-serif text-gray-900 mb-6 text-center">A Special Note For You</h3>
-            
-            <div class="space-y-4 text-gray-700 leading-relaxed font-light text-lg">
-                <p class="font-serif italic text-rose-800 text-xl">Dearest Boyfriend,</p>
-                <p>
-                    If I could give you one thing in life, I would give you the ability to see yourself through my eyes. Only then would you truly realize how incredibly special, handsome, kind, and deeply loved you are.
-                </p>
-                <p>
-                    Thank you for being my safe space, my partner in crime, and my greatest cheerleader. Your smile brightens my darkest days, and your arms feel like home no matter where we are. 
-                </p>
-                <p>
-                    Happy National Boyfriend Day! I am so endlessly grateful that out of all the people in this big world, you are mine and I am yours.
-                </p>
-                <p class="text-right font-serif font-bold text-rose-800 pt-4">
-                    Forever & Always Yours,<br>
-                    <span class="text-gray-900 text-base font-sans font-medium">Your Loving Partner ❤️</span>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <footer class="relative z-10 py-12 text-center text-gray-500 text-sm border-t border-pink-100 mt-20">
-        <p class="flex items-center justify-center gap-1">
-            Made with <i class="fa-solid fa-heart text-rose-600 animate-pulse"></i> especially for National Boyfriend Day
-        </p>
-        <p class="mt-2 text-xs text-gray-400">You are cherished beyond measure.</p>
-    </footer>
-
-    <script>
-        // Floating Hearts Generator
-        function createFloatingHearts() {
-            const container = document.getElementById('hearts-container');
-            const icons = ['fa-heart', 'fa-sparkles', 'fa-star'];
-            
-            setInterval(() => {
-                const heart = document.createElement('div');
-                heart.className = 'floating-heart';
-                heart.innerHTML = `<i class="fa-solid ${icons[Math.floor(Math.random() * icons.length)]}"></i>`;
-                heart.style.left = Math.random() * 100 + 'vw';
-                heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
-                heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
-                container.appendChild(heart);
-                
-                setTimeout(() => {
-                    heart.remove();
-                }, 6000);
-            }, 400);
-        }
-
-        // Countdown Timer Logic
-        function updateCountdown() {
-            const dateInput = document.getElementById('anniversary-date').value;
-            const targetDate = new Date(dateInput).getTime();
-            const now = new Date().getTime();
-            const difference = now - targetDate;
-
-            if (difference > 0) {
-                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                document.getElementById('days').innerText = String(days).padStart(2, '0');
-                document.getElementById('hours').innerText = String(hours).padStart(2, '0');
-                document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
-                document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
-            }
-        }
-
-        // Coupons Data & Renderer
-        const couponsData = [
-            { title: "One Free Massage", desc: "Redeemable for a 30-minute relaxing back & shoulder massage.", icon: "fa-hands-bubbles" },
-            { title: "Movie Night Pick", desc: "You get total control over the movie, snacks, and seating choice!", icon: "fa-film" },
-            { title: "Home-Cooked Favorite Meal", desc: "Whatever you're craving, I'll cook it just for you.", icon: "fa-utensils" },
-            { title: "Endless Cuddles & Hugs", desc: "Valid for unlimited uninterrupted cuddles whenever you need them.", icon: "fa-heart-pulse" },
-            { title: "Coffee & Breakfast in Bed", desc: "Start your morning like a true king with your favorite breakfast.", icon: "fa-mug-hot" },
-            { title: "A Surprise Date Night", desc: "Sit back and relax while I plan a complete surprise outing for us.", icon: "fa-gift" }
-        ];
-
-        function renderCoupons() {
-            const grid = document.getElementById('coupons-grid');
-            grid.innerHTML = couponsData.map((c, index) => `
-                <div class="coupon-card h-56 cursor-pointer" onclick="this.classList.toggle('flipped')">
-                    <div class="coupon-inner relative w-full h-full rounded-2xl shadow-md transition-transform duration-500">
-                        <!-- Front -->
-                        <div class="coupon-front absolute inset-0 bg-white rounded-2xl p-6 flex flex-col items-center justify-center text-center border-2 border-dashed border-pink-300 shadow-sm">
-                            <div class="w-12 h-12 rounded-full bg-pink-50 flex items-center justify-center text-rose-600 mb-3 text-xl">
-                                <i class="fa-solid ${c.icon}"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800 font-serif">${c.title}</h3>
-                            <span class="text-xs text-rose-500 mt-2 uppercase tracking-widest font-semibold">Click to Flip & Redeem</span>
-                        </div>
-                        <!-- Back -->
-                        <div class="coupon-back absolute inset-0 rose-gradient text-white rounded-2xl p-6 flex flex-col items-center justify-center text-center shadow-lg">
-                            <span class="text-xs uppercase tracking-widest text-pink-200 font-semibold mb-2">Coupon #${index + 1}</span>
-                            <p class="text-lg font-medium mb-3">${c.desc}</p>
-                            <span class="text-xs bg-white/20 px-3 py-1 rounded-full text-white font-medium">Redeemed with Love ❤️</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Reasons Why I Love You Data & Renderer
-        const reasonsData = [
-            "Your smile instantly makes my worst days completely disappear.",
-            "You listen to me with genuine care and make me feel truly understood.",
-            "You make me laugh harder than anyone else in the entire world.",
-            "Your kindness and gentle heart inspire me to be a better person.",
-            "Even doing absolutely nothing together feels like the best adventure.",
-            "You support my dreams and believe in me even when I doubt myself."
-        ];
-
-        function renderReasons() {
-            const container = document.getElementById('reasons-container');
-            container.innerHTML = reasonsData.map((reason, index) => `
-                <div class="glass-card rounded-2xl p-5 shadow-sm border border-pink-100 cursor-pointer transition hover:border-pink-300 group" onclick="toggleReason(this)">
-                    <div class="flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <span class="w-8 h-8 rounded-full bg-pink-100 text-rose-700 flex items-center justify-center font-bold text-sm font-serif">0${index + 1}</span>
-                            <h4 class="text-gray-800 font-medium group-hover:text-rose-700 transition">Reason #${index + 1}</h4>
-                        </div>
-                        <i class="fa-solid fa-chevron-down text-rose-400 transition-transform duration-300 arrow-icon"></i>
-                    </div>
-                    <div class="reason-content hidden mt-4 pt-3 border-t border-pink-100 text-gray-600 font-light leading-relaxed">
-                        ${reason}
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function toggleReason(element) {
-            const content = element.querySelector('.reason-content');
-            const arrow = element.querySelector('.arrow-icon');
-            content.classList.toggle('hidden');
-            arrow.classList.toggle('rotate-180');
-        }
-
-        // Initialize on load
-        window.onload = function() {
-            createFloatingHearts();
-            renderCoupons();
-            renderReasons();
-            setInterval(updateCountdown, 1000);
-            updateCountdown();
-            
-            document.getElementById('anniversary-date').addEventListener('change', updateCountdown);
-        };
-    </script>
+    <section class="stage shell" id="letter" hidden aria-labelledby="letter-title"><div class="letter"><div class="section-head"><span class="kicker">Surprise five · from my heart</span><h2 id="letter-title">A special note for you</h2></div><p class="salute">Dearest Boyfriend,</p><p>If I could give you one thing in life, I would give you the ability to see yourself through my eyes. Only then would you truly realize how incredibly special, handsome, kind, and deeply loved you are.</p><p>Thank you for being my safe space, my partner in crime, and my greatest cheerleader. Your smile brightens my darkest days, and your arms feel like home no matter where we are.</p><p>Happy National Boyfriend Day! I am so endlessly grateful that out of all the people in this big world, you are mine and I am yours.</p><p class="signoff">Forever &amp; Always Yours,<br><span style="font:500 .92rem system-ui;color:var(--ink)">Your Loving Partner ❤️</span></p></div><div class="surprise-next"><button class="button secondary" id="again">Read it again from the beginning ↑</button></div></section>
+  </main>
+  <footer class="footer">Made with <b>♥</b> especially for you · You are cherished beyond measure.</footer>
+  <script>
+    const coupons=[['One Free Massage','Redeemable for a 30-minute relaxing back & shoulder massage.','✋'],['Movie Night Pick','You get total control over the movie, snacks, and seating choice!','🎬'],['Home-Cooked Favorite Meal',"Whatever you're craving, I'll cook it just for you.",'🍽'],['Endless Cuddles & Hugs','Valid for unlimited uninterrupted cuddles whenever you need them.','💗'],['Coffee & Breakfast in Bed','Start your morning like a true king with your favorite breakfast.','☕'],['A Surprise Date Night','Sit back and relax while I plan a complete surprise outing for us.','🎁']];
+    const reasons=['Your smile instantly makes my worst days completely disappear.','You listen to me with genuine care and make me feel truly understood.','You make me laugh harder than anyone else in the entire world.','Your kindness and gentle heart inspire me to be a better person.','Even doing absolutely nothing together feels like the best adventure.','You support my dreams and believe in me even when I doubt myself.'];
+    const order=['countdown','coupons','story','reasons','letter'];let unlocked=0;
+    const couponGrid=document.getElementById('coupons-grid');coupons.forEach((c,i)=>{const b=document.createElement('button');b.className='coupon';b.type='button';b.setAttribute('aria-label',`${c[0]}, tap to reveal coupon`);b.innerHTML=`<span class="coupon-inner"><span class="coupon-face coupon-front"><span class="coupon-icon">${c[2]}</span><h3>${c[0]}</h3><small>Tap to flip &amp; redeem</small></span><span class="coupon-face coupon-back"><small>Coupon #${i+1}</small><p>${c[1]}</p><small>Redeemed with love ❤️</small></span></span>`;b.addEventListener('click',()=>{b.classList.toggle('flipped');b.setAttribute('aria-pressed',b.classList.contains('flipped'))});couponGrid.append(b)});
+    const reasonsBox=document.getElementById('reasons-container');reasons.forEach((r,i)=>{const d=document.createElement('details');d.className='reason';d.innerHTML=`<summary><span><span style="color:var(--rose);margin-right:12px">0${i+1}</span>Reason #${i+1}</span></summary><div class="reason-answer">${r}</div>`;reasonsBox.append(d)});
+    document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openStage(b.dataset.open)));
+    function openStage(id){const idx=order.indexOf(id);if(idx<0||idx>unlocked)return;unlocked=Math.max(unlocked,idx+1);const section=document.getElementById(id);section.hidden=false;document.getElementById('letter-link').hidden=unlocked<order.length;requestAnimationFrame(()=>{section.scrollIntoView({behavior:'smooth',block:'start'});section.setAttribute('tabindex','-1');section.focus({preventScroll:true})})}
+    document.getElementById('letter-link').addEventListener('click',e=>{e.preventDefault();openStage('letter')});document.getElementById('again').addEventListener('click',()=>{document.getElementById('top').scrollIntoView({behavior:'smooth'})});
+    function updateCountdown(){const input=document.getElementById('anniversary-date').value;const start=new Date(`${input}T00:00:00`).getTime();let diff=Date.now()-start;if(!Number.isFinite(start))return;if(diff<0)diff=0;const units=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];['days','hours','minutes','seconds'].forEach((id,i)=>document.getElementById(id).textContent=String(units[i]).padStart(2,'0'))}
+    document.getElementById('anniversary-date').addEventListener('change',updateCountdown);updateCountdown();setInterval(updateCountdown,1000);
+    document.querySelectorAll('[data-photo]').forEach(input=>input.addEventListener('change',()=>{const f=input.files&&input.files[0];if(!f)return;const box=input.closest('.memory-photo');const img=document.createElement('img');img.alt='Your memory';img.src=URL.createObjectURL(f);box.replaceChildren(img)}));
+    const floatLayer=document.getElementById('float-layer');setInterval(()=>{if(document.hidden)return;const el=document.createElement('span');el.className='float';el.textContent=['♥','✦','♡'][Math.floor(Math.random()*3)];el.style.left=Math.random()*100+'vw';el.style.fontSize=(12+Math.random()*17)+'px';el.style.animationDuration=(6+Math.random()*5)+'s';floatLayer.append(el);setTimeout(()=>el.remove(),11500)},650);
+  </script>
 </body>
 </html>
+
